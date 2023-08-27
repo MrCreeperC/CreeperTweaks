@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "ctweak",
+	"version": "${version}",
+	"name": "CreeperTweak",
+	"description": "Здесь собраны различные нужные твики (моды) в одном, их можно включить/отключить с помощью бинда",
+	"authors": [
+		"MrCreeperC"
+	],
+	"contact": {
+		"homepage": "https://github.com/MrCreeperC",
+		"sources": ""
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/ctweak/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.mrcreeperc.ctweak.ExampleMod"
+		],
+		"client": [
+          "net.mrcreeperc.ctweak.CreeperTweakModClient"
+		],
+		"fabric-datagen": [
+			"net.mrcreeperc.ctweak.ExampleModDataGenerator"
+		]
+	},
+	"mixins": [
+		"ctweak.mixins.json",
+		{
+			"config": "ctweak.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.22",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
